@@ -17,8 +17,8 @@ def return_df(url, df_name):
     df = pd.DataFrame(data['payload'][df_name])
 
     for p in range(2, pages+1):
-      url2 = url + df_name + f'?page={p}'
-      data = requests.get(url2).json()
+      url_ext = url + df_name + f'?page={p}'
+      data = requests.get(url_ext).json()
       df = pd.concat([df, pd.DataFrame(data['payload'][df_name])])
   
   else:
