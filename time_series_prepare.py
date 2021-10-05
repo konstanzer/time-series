@@ -14,11 +14,12 @@ def datetime_index(df, colname):
 
 	return df
 
-def day_and_month(df):
+def day_year_month(df):
 	'''
 	Add day and month column fromd datetime index.
 	'''
 	df['month'] = df.index.month_name()
+	df['year'] = df.index.year
 	df['weekday'] = df.index.day_name()
 
 	return df
